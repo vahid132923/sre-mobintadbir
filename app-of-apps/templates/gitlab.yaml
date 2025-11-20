@@ -411,7 +411,7 @@ spec:
             imageName: {{ .Values.spec.registry }}/cloudnative-pg/postgresql:16.1
             logLevel: warning
             storage:
-              size: 30Gi
+              size: 5Gi
               storageClass: "k8s-lvm-sc"
             resources:
               limits:
