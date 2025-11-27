@@ -230,7 +230,7 @@ spec:
         controller:
           allowSnippetAnnotations: "true"
           extraArgs:
-            default-ssl-certificate: "cert-manager/tls-raahbar.cloud"
+            default-ssl-certificate: "nginx/tls-raahbar.cloud"
           image:
             registry: {{ .Values.spec.registry }}
             digest: ""
@@ -259,7 +259,7 @@ spec:
         controller:
           allowSnippetAnnotations: "true"
           extraArgs:
-            default-ssl-certificate: "cert-manager/tls-raahbar.cloud" 
+            default-ssl-certificate: "nginx/tls-raahbar.cloud" 
           ingressClassResource:
             name: public
             enabled: true
