@@ -16,7 +16,211 @@ spec:
     - CreateNamespace=true
     - PrunePropagationPolicy=orphan
     - ServerSideApply=true
-  sources:                     
+  sources:                  
+  - repoURL: https://stakater.github.io/stakater-charts
+    targetRevision: 1.0.5
+    chart: secrets
+    helm:
+      values: |
+         Secrets:
+         - name: tls-raahbar.cloud
+           data:
+             tls.crt: |
+                -----BEGIN CERTIFICATE-----
+                MIIIGTCCBgGgAwIBAgIQEZ4dOUMYu+7ekvan+nTU+zANBgkqhkiG9w0BAQsFADBS
+                MQswCQYDVQQGEwJQTDEhMB8GA1UECgwYQXNzZWNvIERhdGEgU3lzdGVtcyBTLkEu
+                MSAwHgYDVQQDDBdDZXJ0dW0gRFYgVExTIEcyIFIzOSBDQTAeFw0yNTEwMDQwNjIw
+                MTJaFw0yNjEwMDQwNjIwMTFaMBoxGDAWBgNVBAMMDyoucmFhaGJhci5jbG91ZDCC
+                AiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAOKThBu4395wtpOOIlpjpHnl
+                Y/SHwjPMB955WwbHCgnEIBq3uKyLoO6C52mzqblvAuVrUO+GeEmF3N5Lq7I3XQbS
+                wSI54hQXJSoMZDFpA0lB0GWUlQqCzq4qP+9ftxe8UMG4wzxGyYhdYD5R0g0s2s4K
+                AFYfHolds2CjXZODekvpHRJxqDKtcJzl6Csi16ensrynCrowIv5PLHBDuv/NH3Pp
+                1DqRJzjst8hGmAkVDxVRleVOOJLhoO+5dNNoLE5eTzNjdMdoJVPslhci6KSJwQpv
+                rtSrXso4UlKr1d8RyBQ3Ly2lAwZBnqEue2ovgExM5SeLHL+3aypWStlCUYlc6p7e
+                RFAgauyENPBgHBXhAdmxmICptk0W5U9Mpd3aeGURrbmHGL7ibR9tWtltwvvEeLmA
+                MGLM37K7UpQm2vFaF0U1AIeQXeChzv+p08iV9MP2/XsZjzpddo01KFm9PXiK/Wsy
+                QN+JlHDT3zmMmX89jxb9GpIYROSrcl7ebH9u3wKJUo+Bp39YGhz+wi6/t84MdhQN
+                CUq36UqfY052QPdNhYUCBCEYDD1HqRiBQVEHEf5u+1Nb8oEcSzaKl+MV9FgPDR5B
+                M8RxDcW0QnIrqKZjKiO/Mo9Wzvae1zvOl86SocClTWUlNYs8++H1SeZ8ALeuARo0
+                JCtdepZwoFakc3k8or7XAgMBAAGjggMhMIIDHTAMBgNVHRMBAf8EAjAAME8GA1Ud
+                HwRIMEYwRKBCoECGPmh0dHA6Ly9jZXJ0dW1kdnRsc2cycjM5Y2EuY3JsLmNlcnR1
+                bS5wbC9jZXJ0dW1kdnRsc2cycjM5Y2EuY3JsMIGaBggrBgEFBQcBAQSBjTCBijA1
+                BggrBgEFBQcwAYYpaHR0cDovL2NlcnR1bWR2dGxzZzJyMzljYS5vY3NwLWNlcnR1
+                bS5jb20wUQYIKwYBBQUHMAKGRWh0dHA6Ly9jZXJ0dW1kdnRsc2cycjM5Y2EucmVw
+                b3NpdG9yeS5jZXJ0dW0ucGwvY2VydHVtZHZ0bHNnMnIzOWNhLmNlcjAfBgNVHSME
+                GDAWgBQzqHe3AThvXx8kJKIebBTjbiID3zAhBgNVHSAEGjAYMAgGBmeBDAECATAM
+                BgoqhGgBhvZ3AmUBMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAOBgNV
+                HQ8BAf8EBAMCBaAwKQYDVR0RBCIwIIIPKi5yYWFoYmFyLmNsb3Vkgg1yYWFoYmFy
+                LmNsb3VkMIIBfwYKKwYBBAHWeQIEAgSCAW8EggFrAWkAdgDXbX0Q0af1d8LH6V/X
+                AL/5gskzWmXh0LMBcxfAyMVpdwAAAZmt4NnyAAAEAwBHMEUCIQD8mzEL+sWekMQs
+                CTWfv3Xp73t4olmXYUckN0XGoLq54wIgXG3iE95mixoZ8vK6qtFcF0u7MLjYYH2L
+                eEy5NpIQ1WoAdgDCMX5XRRmjRe5/ON6ykEHrx8IhWiK/f9W1rXaa2Q5SzQAAAZmt
+                4NoPAAAEAwBHMEUCICbOTHz/bYymiyyQM6HmAW0w7nEX/GXsG2YMvJthceCNAiEA
+                twEbcHerL3HNguvalIK9klnm26oDNNV4cPaZlPnqUqkAdwCsqzBwbOvshDH0E9L0
+                kV8RHkIkQ7HypoxPPCs7px4CwwAAAZmt4NsAAAAEAwBIMEYCIQDLKH7xXdfsv6XN
+                nrSjLlYjfgsOeryAgOoGMlNJtdYehQIhANC0aH6ofbBQcZKg1+W6EWK3CATetxXI
+                6J3pQrms8ZG4MA0GCSqGSIb3DQEBCwUAA4ICAQBcUHxG0H8kQBiipnHAGz+ywjVC
+                jjG8VdXfXAsXqwGBTMZtBKPfVUPvEwNQYjggJD1eMeKecZNE3dGLOmJXzCLtCmMy
+                VCdDAv59wcbovP22osGzizbxHPPKx7t2aGy2LMNO4dTVRvijJPvoZl5A6mJlRcp7
+                vdGKheDkjKgpuO2u0XhdezyjiZaRE0niW5z5xk/HqMHdg6U4XDfgktOvpWgidtO7
+                UYpqqGotE1HWRK8s049WcKu4QrguLx12n+EWW8CQW595AdzyAczGLxmLxOS9DRhG
+                pcfsFuklRLfXvreDt/lslXdP3MV74DL+ufbstZxTn2aEPsgLCyUBbYgFBz+M/ovJ
+                nYD8gGSAafIZQEwDyJZNTGEUm/WmA8TqButABvlleFWwTBW7IQ0fUSvTMhP1JO5e
+                dmm2X01WIO2PSnY/ihR+XVv//zk3VMDuMzlDnVPtYBs1sNc/WX+x96KY+JQZaski
+                evb08jq1r9L20O/NjBNumGOb7h4JFPkz6BCXQabdF6A+Uc1qwG4OrILeIgqeVaPQ
+                ffQdJWiSMGK6418SxEhdg6fR6DoymuSW6/GKDXgmQ8edAq8zYnET2Di0Jf8mrrcq
+                JLT1I1A8I71876099Jo0VZNiNyaXzovgkE6eZUq77ROVHuMDSzqZLgf+bPfuaqRB
+                F9lxIVlU1B1PEzTKXA==
+                -----END CERTIFICATE-----
+                -----BEGIN CERTIFICATE-----
+                MIIGnTCCBIWgAwIBAgIRAKgt2eXcr98TIF5wBD5rlagwDQYJKoZIhvcNAQENBQAw
+                ejELMAkGA1UEBhMCUEwxITAfBgNVBAoTGEFzc2VjbyBEYXRhIFN5c3RlbXMgUy5B
+                LjEnMCUGA1UECxMeQ2VydHVtIENlcnRpZmljYXRpb24gQXV0aG9yaXR5MR8wHQYD
+                VQQDExZDZXJ0dW0gVHJ1c3RlZCBSb290IENBMB4XDTI0MDYxODA3NDEyMloXDTM5
+                MDYwNTA3NDEyMlowUjELMAkGA1UEBhMCUEwxITAfBgNVBAoMGEFzc2VjbyBEYXRh
+                IFN5c3RlbXMgUy5BLjEgMB4GA1UEAwwXQ2VydHVtIERWIFRMUyBHMiBSMzkgQ0Ew
+                ggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQCo52NXEXWoO2w6zQeBtNer
+                d5ahhe8RgM8XVpwGEFoovjHc4K+Cp3auUWVlt7/ARthJoxOttF+jaSrlSve9mWnm
+                TJOo1QLuoOTWuZ9XUkMjDG1ztTbFsgRqQyOtZsDqniHD79wqD49DQW4geVslp9/L
+                iTQKUpPawtAwpBeoaRXL8RJ8xjNA+2bEr6vesz2MEvvhpWBSWNAIR5O5YbiLztQ9
+                KdOuBYS0CW59ptuCjg3AuLcp8aOjk9z/kJc8xKkO48hLTp+HpdHkuI+iFWZn0aCL
+                lM/ngpdoBw+NGs6TMC8B6BcK7y/zl8FsNC4gE86Kfd8J9zWhCA7umHnBXCSYCKRx
+                H5o7DtoGiWXvcRKYpGtWt9czdUa1edSk5mTrwZGEXLAkX1ECiAq4GS5vEGjrEQ1u
+                x8mag2LDh7ZnXdcyzkKZKGsx7uExe3Nx5gWWZMXFrZ5v+uxynKogHUY2vdIMB3dn
+                9qRYwpzvn3msfBbkRTAcS9eis1AY0Xxqlt3aXkVyqfKhdJxOPpzATM+Ve4jZSd1n
+                LzEj+kFuHnv2jyOY3Vb35n3EmW8yAwG1OWX/QnemMA5s2fZ+ZydHOTG4DkwXnaTr
+                R/vUhM+FNywNUlvzYjcM6zt3Ysf9M1hK5PjUEKzsPf5BrIp0fs1zhlVC+cgBN2+J
+                PtYwxP1nNpxwBgtIPoTk6wIDAQABo4IBRDCCAUAwcQYIKwYBBQUHAQEEZTBjMDcG
+                CCsGAQUFBzAChitodHRwOi8vc3ViY2EucmVwb3NpdG9yeS5jZXJ0dW0ucGwvY3Ry
+                Y2EuY2VyMCgGCCsGAQUFBzABhhxodHRwOi8vc3ViY2Eub2NzcC1jZXJ0dW0uY29t
+                MB8GA1UdIwQYMBaAFIz7HHW8AtOfTi5I2flgVKrEs0/6MBIGA1UdEwEB/wQIMAYB
+                Af8CAQAwNQYDVR0fBC4wLDAqoCigJoYkaHR0cDovL3N1YmNhLmNybC5jZXJ0dW0u
+                cGwvY3RyY2EuY3JsMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAOBgNV
+                HQ8BAf8EBAMCAQYwEQYDVR0gBAowCDAGBgRVHSAAMB0GA1UdDgQWBBQzqHe3AThv
+                Xx8kJKIebBTjbiID3zANBgkqhkiG9w0BAQ0FAAOCAgEACDQ1ggBelZZ/NYs1nFKW
+                HnDrA8Y4pv0lvxLzSAC4ejGavMXqPTXHA+DEh9kHNd8tVlo24+6YN96Gspb1kMXR
+                uuql23/6R6Fpqg49dkQ1/DobsWvAHoYeZvsaAgaKRD3bvsAcB0JBhyBVT/88S9gu
+                DnS5YKMldiLMkVW1Noskd4dHEJ2mkJcVzJIJ0Y4johA1lC1JnZMjkB8ZTNIblkgJ
+                K6PqlhYkeMOkx+XbmUuUgh29T0sPne7/V6PHnbEJIxUs40+iLCF0HrdqZypjvWQq
+                pSmHRHI3UWVERDeERca0uJ3I+a5ER9vUL9u5ilGG4afyx7QwzitBG+1rU3nRsHyZ
+                g6osILL/MWc0AbWJMyKzQ9Guj+uwq47h6BC9BsWF34pJeDC8EuN3HNxPlSWSII9l
+                Omwtipvq0EL1iocJhXdlsG+jIUVs/Sl/Um9JiZV+h/MoytnrPrWMIj+0zz6BdaPP
+                2sT6wcLzpnwYcE9FWSbQrzNpL283EOUkObjc8AIxICzPHGusF0IqsO+sj9XzvLTh
+                TjKfFlzx4NR8gbK7m8sXq6cgP4UAtyvDswebFIRQiuhjqOT9G7+56+4zC0RaEZx/
+                LwoFE+ObVXxX674szQvIc+7WPCooVsUbwZIikzJqZb4gJQ1OQx23CgyyYlsPHIDN
+                8FpPkganuCwy++7umTkM7+Q=
+                -----END CERTIFICATE-----
+                -----BEGIN CERTIFICATE-----
+                MIIFxDCCBKygAwIBAgIRANjgdEtYJJGfvQiEffcgIPowDQYJKoZIhvcNAQENBQAw
+                fjELMAkGA1UEBhMCUEwxIjAgBgNVBAoTGVVuaXpldG8gVGVjaG5vbG9naWVzIFMu
+                QS4xJzAlBgNVBAsTHkNlcnR1bSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTEiMCAG
+                A1UEAxMZQ2VydHVtIFRydXN0ZWQgTmV0d29yayBDQTAeFw0yMzA5MTkxMDAwMDBa
+                Fw0yODA5MTkxMDAwMDBaMHoxCzAJBgNVBAYTAlBMMSEwHwYDVQQKExhBc3NlY28g
+                RGF0YSBTeXN0ZW1zIFMuQS4xJzAlBgNVBAsTHkNlcnR1bSBDZXJ0aWZpY2F0aW9u
+                IEF1dGhvcml0eTEfMB0GA1UEAxMWQ2VydHVtIFRydXN0ZWQgUm9vdCBDQTCCAiIw
+                DQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBANEtjru3NuptN5GfTpOnBeQpAyXO
+                HIL3fJmfQQbN7aO6wNsJLMF83yl+S2Uvk6fUAWsDKBij2J0FwSrYRfGR3t870IAC
+                jM84D+qnXHgRpMHIhVwl09Oy5yXPEVSXqzXAHnYc7wBTnzncFKUsIiWzcnL8jbPl
+                PggeFCo3C4g8yrD0yMKhrrzBvilnVeL8rVlc/r1XLLCQjcLtN7Z8mYi11QOaPRUN
+                PTqoqEXwlU4lWR3NmGm708wyyY3vgf6tfYm7umATymWVZ6DzGfYDVtRq0yfioa2D
+                8EoSInccBXPiGXFCwOx1RpqQWOBqjiulRjAEjhmyF+O+qbp/VvEkA9eyISh2DjYw
+                THnVQZqaqLg1ugw68kQbIIj3xSXXPcbjPkPdh/7E6vVTPkxl/ztKy3haaxdfDcfD
+                T06aKqLtV00i4kaaPw+RNCR9VeOMlTfTGvAJKyzSyY20DQCrZyko2AH1GQS2Hb52
+                /nJcxIXK0oBB3wWoo9WEkE8L8+A/mxnSN4k/8ntSHIz24fc8B5eMDqJZgQyykD3T
+                41lG7Q+pp96Aa1qqB7YZy7xX85chegyxK3Q+69qnZy1MxJieNgl2Zmb8Gj/qSFQc
+                vjC9gFC/fLXOAPYMYdnnJAPg4wGBDr3YhTSIvbI2qHtcCOVEgIxv+C/VIcodHND7
+                xLWH0TpOx3a1NUi1AgMBAAGjggE/MIIBOzAPBgNVHRMBAf8EBTADAQH/MB0GA1Ud
+                DgQWBBSM+xx1vALTn04uSNn5YFSqxLNP+jAfBgNVHSMEGDAWgBQIds3LB/8k9sXN
+                7buQvOKEN0Z19zAOBgNVHQ8BAf8EBAMCAQYwLwYDVR0fBCgwJjAkoCKgIIYeaHR0
+                cDovL2NybC5jZXJ0dW0ucGwvY3RuY2EuY3JsMGsGCCsGAQUFBwEBBF8wXTAoBggr
+                BgEFBQcwAYYcaHR0cDovL3N1YmNhLm9jc3AtY2VydHVtLmNvbTAxBggrBgEFBQcw
+                AoYlaHR0cDovL3JlcG9zaXRvcnkuY2VydHVtLnBsL2N0bmNhLmNlcjA6BgNVHSAE
+                MzAxMC8GBFUdIAAwJzAlBggrBgEFBQcCARYZaHR0cHM6Ly93d3cuY2VydHVtLnBs
+                L0NQUzANBgkqhkiG9w0BAQ0FAAOCAQEAKPpdjKpRGqa+eIZpwndaFy+p4H1FT2wf
+                9JOJdmyjSkJ4wlUp+xbL6v7D6/6xYO8IcvyWyR1sdqef8HK49mYK9jDjk+ypq7IO
+                h8R9VbhSuS6KxY3X5lVV6vmYZ6QE4G8IuK9ktvGSVS4uNabf+/r+Gq9oiysCwsck
+                AsjwXbYN2gsKAWxXGC1vAqIOlB3tJaL29UVh2nKdl0eD7EsFwbk0vo/U5pQ/Yi8u
+                JJb/OSiK1XXUJ7S8wmURNWK2hIzHSnP9xotjmUJMVMb8Igj8jntZNc9U3lNuzG6R
+                F2kSR3FCgnCJ9AebGFZwEc7QDTCuohG6Lmb6D3Dtopv/LvqypxAmQQ==
+                -----END CERTIFICATE-----
+                -----BEGIN CERTIFICATE-----
+                MIIDuzCCAqOgAwIBAgIDBETAMA0GCSqGSIb3DQEBBQUAMH4xCzAJBgNVBAYTAlBM
+                MSIwIAYDVQQKExlVbml6ZXRvIFRlY2hub2xvZ2llcyBTLkEuMScwJQYDVQQLEx5D
+                ZXJ0dW0gQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkxIjAgBgNVBAMTGUNlcnR1bSBU
+                cnVzdGVkIE5ldHdvcmsgQ0EwHhcNMDgxMDIyMTIwNzM3WhcNMjkxMjMxMTIwNzM3
+                WjB+MQswCQYDVQQGEwJQTDEiMCAGA1UEChMZVW5pemV0byBUZWNobm9sb2dpZXMg
+                Uy5BLjEnMCUGA1UECxMeQ2VydHVtIENlcnRpZmljYXRpb24gQXV0aG9yaXR5MSIw
+                IAYDVQQDExlDZXJ0dW0gVHJ1c3RlZCBOZXR3b3JrIENBMIIBIjANBgkqhkiG9w0B
+                AQEFAAOCAQ8AMIIBCgKCAQEA4/t9o3K6wvDJFIf1awFO4W5AB7ptJ11/91sts1rH
+                UV+rpDKmYYe2bg+G0jACl/jXaVehGDldamR5xgFZrDwxSjh80gTSSyjoIF87B6LM
+                TXPb865Px1bVWqeWifrzq2jUI4ZZJ88JJ7ysbnKDHDBy3+Ci6dLhdHUZvSqeexVU
+                BBvXQzmtVSjF4hq79MDkrjhJM8x2hZ85RdKknvISjFH4fOQtf/WsX+sWn7Et0brM
+                kUJ3TCXJkDhv2/DM+44el1k+1WBO5gUo7Ul5E0u6SNsv+XLTOcr+H9g0cvW0QM8x
+                AcPs3hEtF10fuFDRXhmnad4HMyjKUJX5p1TLVIZQRan5SQIDAQABo0IwQDAPBgNV
+                HRMBAf8EBTADAQH/MB0GA1UdDgQWBBQIds3LB/8k9sXN7buQvOKEN0Z19zAOBgNV
+                HQ8BAf8EBAMCAQYwDQYJKoZIhvcNAQEFBQADggEBAKaorSLOAT2mo/9i0Eidi15y
+                sHhE49wcrwn9I0j6vSrEuVUEtRCjjSfeC4Jj0O7eDDd5QVsisrCaQVymcODU0HfL
+                I9MA4GxWL+FpDQ3Zqr8hgVDZBqWo/5U30Kr+4rP1mS1FhIrlQgnXdAIv94nYmem8
+                J9RHjboNRhx3zxSkHLmkMcScKHQDNP8zGSal6Q10tz6XxnboJ5ajZt3hrvJBW8qY
+                VoNzcOSGGtIxQbovvi0TWnZvTuhOgQ4/WwMioBK+ZlgRSssDxLQqKi2WF+A5VLxI
+                03YnnZotBqbJ7DnSq9ufmgsnAjUpsUCV5/nonFWIGUbWtzT1fs45mtk48VH3Tyw=
+                -----END CERTIFICATE-----
+             tls.key: |
+                 -----BEGIN PRIVATE KEY-----
+                 MIIJQwIBADANBgkqhkiG9w0BAQEFAASCCS0wggkpAgEAAoICAQDik4QbuN/ecLaT
+                 jiJaY6R55WP0h8IzzAfeeVsGxwoJxCAat7isi6Dugudps6m5bwLla1DvhnhJhdze
+                 S6uyN10G0sEiOeIUFyUqDGQxaQNJQdBllJUKgs6uKj/vX7cXvFDBuMM8RsmIXWA+
+                 UdINLNrOCgBWHx6JXbNgo12Tg3pL6R0ScagyrXCc5egrItenp7K8pwq6MCL+Tyxw
+                 Q7r/zR9z6dQ6kSc47LfIRpgJFQ8VUZXlTjiS4aDvuXTTaCxOXk8zY3THaCVT7JYX
+                 IuikicEKb67Uq17KOFJSq9XfEcgUNy8tpQMGQZ6hLntqL4BMTOUnixy/t2sqVkrZ
+                 QlGJXOqe3kRQIGrshDTwYBwV4QHZsZiAqbZNFuVPTKXd2nhlEa25hxi+4m0fbVrZ
+                 bcL7xHi5gDBizN+yu1KUJtrxWhdFNQCHkF3goc7/qdPIlfTD9v17GY86XXaNNShZ
+                 vT14iv1rMkDfiZRw0985jJl/PY8W/RqSGETkq3Je3mx/bt8CiVKPgad/WBoc/sIu
+                 v7fODHYUDQlKt+lKn2NOdkD3TYWFAgQhGAw9R6kYgUFRBxH+bvtTW/KBHEs2ipfj
+                 FfRYDw0eQTPEcQ3FtEJyK6imYyojvzKPVs72ntc7zpfOkqHApU1lJTWLPPvh9Unm
+                 fAC3rgEaNCQrXXqWcKBWpHN5PKK+1wIDAQABAoICAGcjsaqQ8M+oTWRD+l1dKH0Y
+                 r/SbbAr6IMbkRUyDhI1Hizm+UkGxWfPZARC76VHxN8dJn9E5TD5jwlQq7CC3VRCL
+                 FcHHyaNNmexXMbDQVd+eJwhmp6XeP8lGkE4eKxGR9s0Il080Bf+eSfZ0doLq3TuX
+                 j+mkRtlPHx2poCpLWnt9xW8k7+UJ0M6LVbF1LegyzYlVHOv+h59uWRNNsa1KKbwx
+                 QBvdAZbHIy32/LR9sp0Iw4xbnCM4tHML4CNwM2MFSVZiOsGfJgbbFsO3b2GfF5Hx
+                 nwtOa1rwYoEhmbzusj6JlF9Z01OgwV4r86A1uViCVHo4uECJdS4TlATsTIOUGXSW
+                 nNJDKgGwr73JPZEu2e8S3fCZcA1cRPFn5IR9St9qK88tkIrUP2e2XFNbS0kz9h7T
+                 yQO3yHhBcQwjwKoLR2PpAAYAAGfijm6Cc07kwFbw6Tb/Q7hn9W0sTkyJAsb9S8di
+                 u7UCkE/ma7d1iKyHXRa3fisA55KJXH898MU+YWWlBSCR0vZp71zu4IPH5RuxZfi1
+                 u61HXlnGzSBsR2jwSRHac0pXg6OPaL2/aan1sxdnwwYz9/Nd/moLb25ycu6CdqRQ
+                 lTDumzUlL5qpU0N7Ip9GkmsohvyR2gpHcxCB4F7T4un3s1sovvMTVGddR43+7MVv
+                 h//KOs2HNEhRvd2NUXC5AoIBAQD/zevJ54OizvWmsWFTuHLwqOIPqguODC3+fd+8
+                 lemE+ZJkNrrf0U70xLtClf+cUPeVOhtkGoUDSKGhaDFR3+KzRWZbe20Em/nBiJw7
+                 b2MJ7s8G0aX7udXFH1rGpUHO4PS9C9MR2n3uDNOOZd7csuhe6WHDE0EYXaVb/SEc
+                 mJmn5W8w9xUItDcyeCkA9RI+EjJG2gonAh+vwjGmK17cSi0l16d5Rn14y3yGMjuc
+                 DJ8u2YpuLOI+MjgohRF/L+sVjwNpQ5dZAFfjCl8l4vCttP3wPDPw+EGeWacibKks
+                 VRodDzeSdPYyfihF76iHoE4qDRyPYjrXommfcNtoHCpvAQS9AoIBAQDiv998RsSv
+                 CDxCIL265yGZqzT9qzswvByR55jGiwswNMNwFLNrFOB6D+ClOlDVQlOOnRL2mwuI
+                 VXtXD3xWFgur1slexibxNtLtlvnLEZixQ0rRyLZOPgqMQ05PXzoJtBfw8icTSlbK
+                 6jHgt0KRxpDMQ9tlfAZVwpb5tCLEalR4nC4QAkBOeSM6YX6kCkK4903oOydy4YLz
+                 e6vZBMq0VgDlC5x6cuXoYh4I2GA9/KccI58c93lRMHIMjwosen/2DxE7EkGAZb9v
+                 9FPsCckMFTuyecdmZ1//uLqqWt/idd463FicXD6cev+BypRwCiB4D8pcPlh46oyd
+                 0hSHPm/xH40jAoIBAQDywYbMOusPbHxvTtJgUyCxBnRSDTud+C0F4IqdO187FGU6
+                 uT2q/cWCP9i+Hf9PZv8uHNC1tP0Z2qmYtXpoiqFnI6s5ke4pe6QPaAdr2A8S9BCA
+                 FiEAvKEDyveooFfNbmqTpU8PGFx9tqpl7oMKyrX+rFhcej9CUkyE+bmcm6zmSrO0
+                 sibB9dSUDrhK8kf3o+kWmAEed8N+VjoryejiAXrK+Nc0HhMguWtZJv6u3sOKAGSA
+                 nhOulpX4zh+GpgDgmrHQCZbtnYfKLKOTHsTs9GAwxdE9EzuifM5BuwDo03JOtYw1
+                 bs3dqR+rDv7OhvDmsz6xS7Uvwi+eYcm2CVSztzG5AoIBAFEV5EmA1RzyiPns02xe
+                 8vkM7Go6LXSEEINsmomFd37Jn4oZHQAR+yQrQV5UuEtK6K57JSji0QDz8KN1ejUe
+                 tRXCPUiS+6IOxOcJslIX/M6HDd5vNCJOtV7rQrnHh+2oZVdYgPi5AMiXbza40iln
+                 JKinK3HjJDDO4UZyUGyEyahH0YEQDQcC8sIR00O+F5YlecquPLEsS7Peadm1iPds
+                 Oe2udUqkg+rSC4OGPQRtsSSy6FdneA68kExFapH1TIUlZjgFkz7jI85ZRRmHdknH
+                 3g0410Gbfgzodngs/xrwo4PRAC8KHam/olc7plFajbnhi6/o66Jx3c8iLQ0gGs/T
+                 RJkCggEBAPojo1FC1oXj+HiGjFhyUzp1qUlNZgpb82lHpBKvEmaSbceNICFqshJW
+                 F3jrJPLRMl+6sb51q20Lak0U1TX/bAqFS4WSBcASTrSN58LiYzoWFLC5yKUPtc5l
+                 wthtr34DXCAWgRiAFnEY7ohwyu9QttUPZluFGB0bL5pev+n+Ina3Bk194gBepFiW
+                 4eMwnifLwp6zOaI1ODdh6PnkH5YcjZ8UCDqtVXnOxO9U9mfWWd+zwxUUdVE5xJlm
+                 7Haq0L6fZRJ2852Dbt87Q2UosY8Lgo936yZGXkgC8Y7Y2QLzO2LzzOLG0KTY1WdQ
+                 w9S7uFEEkOuUvzy1WrMjdWxsNCYCliw=
+                 -----END PRIVATE KEY-----
+
+           type: kubernetes.io/tls   
+  type: someType           
   - repoURL: 'https://kubernetes.github.io/ingress-nginx'
     targetRevision: 4.11.1
     chart: ingress-nginx
@@ -27,7 +231,7 @@ spec:
         controller:
           allowSnippetAnnotations: "true"
           extraArgs:
-            default-ssl-certificate: "cert-manager/wildcard-mobintadbir"
+            default-ssl-certificate: "cert-manager/tls-raahbar.cloud"
           image:
             registry: {{ .Values.spec.registry }}
             digest: ""
@@ -56,7 +260,7 @@ spec:
         controller:
           allowSnippetAnnotations: "true"
           extraArgs:
-            default-ssl-certificate: "cert-manager/wildcard-mobintadbir" 
+            default-ssl-certificate: "cert-manager/tls-raahbar.cloud" 
           ingressClassResource:
             name: public
             enabled: true

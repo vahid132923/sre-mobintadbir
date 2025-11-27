@@ -25,7 +25,7 @@ spec:
         global:
           image:
              repository: {{ .Values.spec.registry }}/argoproj/argocd
-          domain: delivery.mobintadbir.ir 
+          domain: delivery.{{ .Values.spec.domain }} 
         dex:
           image:
             repository: {{ .Values.spec.registry }}/dexidp/dex
@@ -39,7 +39,7 @@ spec:
              timeout.reconciliation: 0
              oidc.config: |
                name: SSO
-               issuer: https://sso.mobintadbir.ir/auth/realms/mobintadbir
+               issuer: https://sso.{{ .Values.spec.domain }}/auth/realms/mobintadbir
                clientID: argocd
                clientSecret: UF5Uyu02E6XS8ypmv6F6diHotZ6WjFjG 
                requestedScopes: ["openid", "profile", "email", "groups"] 
@@ -62,7 +62,7 @@ spec:
              annotations:
                nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
              ingressClassName: "public"
-             hostname: delivery.mobintadbir.ir
+             hostname: delivery.{{ .Values.spec.domain }}
              tls: false
           service:
             type: NodePort

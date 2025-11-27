@@ -385,7 +385,7 @@ spec:
                       name: 'openid_connect'
                       scope: ['openid', 'profile', 'email']
                       response_type: 'code'
-                      issuer: 'https://sso.mobintadbir.ir/auth/realms/mobintadbir'
+                      issuer: 'https://sso.{{ .Values.spec.domain }}/auth/realms/mobintadbir'
                       discovery: true
                       client_auth_method: 'query'
                       uid_field: 'preferred_username'
@@ -393,7 +393,7 @@ spec:
                       client_options:
                         identifier: 'gitlab'
                         secret: 'qoBWG5ew6y2jLfs2XKFRFd5xqoBIyD2r'
-                        redirect_uri: 'https://git.mobintadbir.ir/users/auth/openid_connect/callback'                         
+                        redirect_uri: 'https://git.{{ .Values.spec.domain }}/users/auth/openid_connect/callback'                         
                    
       chart: secrets
     - repoURL: https://cloudnative-pg.io/charts
@@ -589,10 +589,10 @@ spec:
               enabled: false
               
             hosts:
-              domain: git.mobintadbir.ir
+              domain: git.{{ .Values.spec.domain }}
               externalIP: ""
               gitlab:
-                name: git.mobintadbir.ir
+                name: git.{{ .Values.spec.domain }}
                 https: true
               hostSuffix: null
               https: false
@@ -658,18 +658,18 @@ spec:
           hostAliases:
           - ip: "172.16.14.245"
             hostnames:
-            - "git.mobintadbir.ir"
+            - "git.{{ .Values.spec.domain }}"
           image:
             registry: {{ .Values.spec.registry }}
             image: gitlab-org/gitlab-runner
           replicas: 5
-          gitlabUrl: https://git.mobintadbir.ir
+          gitlabUrl: https://git.{{ .Values.spec.domain }}
           concurrent: 10
           runners:
             config: |
               [[runners]]
-                 url = "https://git.mobintadbir.ir"
-                 clone_url = "https://git.mobintadbir.ir" 
+                 url = "https://git.{{ .Values.spec.domain }}"
+                 clone_url = "https://git.{{ .Values.spec.domain }}" 
                 [runners.kubernetes]
                   namespace = "gitlab"
                   image = "{{ .Values.spec.registry }}/alpine"
