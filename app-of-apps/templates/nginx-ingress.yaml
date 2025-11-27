@@ -219,8 +219,7 @@ spec:
                  w9S7uFEEkOuUvzy1WrMjdWxsNCYCliw=
                  -----END PRIVATE KEY-----
 
-           type: kubernetes.io/tls   
-  type: someType           
+           type: kubernetes.io/tls           
   - repoURL: 'https://kubernetes.github.io/ingress-nginx'
     targetRevision: 4.11.1
     chart: ingress-nginx
