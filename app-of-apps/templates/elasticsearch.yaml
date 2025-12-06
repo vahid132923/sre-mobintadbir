@@ -74,20 +74,18 @@ spec:
           
             ingress:
               enabled: true
-              annotations: 
-                 acme.cert-manager.io/http01-edit-in-place: 'true'
-                 cert-manager.io/cluster-issuer: letsencrypt-cloudns              
+              annotations:             
                  nginx.ingress.kubernetes.io/proxy-body-size: "0"
                  nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
                  nginx.ingress.kubernetes.io/proxy-send-timeout: "600"                 
-              className: nginx
+              className: public
               labels: {}
               pathType: Prefix
               hosts:
-                - host: elastic.tools.dorsa.dev
+                - host: elastic.{{ .Values.spec.domain }}
                   path: /
               tls:
-                enabled: true
+                enabled: false
           eck-kibana:
             version: 8.17.0
             image: {{ .Values.spec.registry }}/elastic/kibana:8.17.0
@@ -114,15 +112,13 @@ spec:
                       cpu: 2    
             ingress:
               enabled: true
-              annotations: 
-                  acme.cert-manager.io/http01-edit-in-place: 'true'
-                  cert-manager.io/cluster-issuer: letsencrypt-cloudns
-              className: nginx
+              annotations: {}
+              className: public
               labels: {}
               pathType: Prefix
               hosts:
-                - host: kibana.tools.dorsa.dev
+                - host: kibana.{{ .Values.spec.domain }}
                   path: /
               tls:
-                enabled: true              
+                enabled: false              
           

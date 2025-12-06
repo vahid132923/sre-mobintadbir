@@ -221,7 +221,7 @@ spec:
              enabled: true
              ingressClassName: public
              hosts:
-               - fanoos.{{ .Values.spec.domain }}
+               - grafana.{{ .Values.spec.domain }}
            #plugins:
            #  - https://repo.{{ .Values.spec.domain }}/repository/github.com/clickhouse-datasource/releases/download/v4.5.0/grafana-clickhouse-datasource-4.5.0.zip,clickhouse-datasource
            #  - https://repo.{{ .Values.spec.domain }}/repository/storage.googleapis.com/integration-artifacts/marcusolsson-treemap-panel/release/2.0.1/any/marcusolsson-treemap-panel-2.0.1.any.zip,marcusolsson-treemap-panel

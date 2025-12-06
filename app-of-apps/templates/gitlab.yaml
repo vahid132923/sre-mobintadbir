@@ -393,7 +393,7 @@ spec:
                       client_options:
                         identifier: 'gitlab'
                         secret: 'qoBWG5ew6y2jLfs2XKFRFd5xqoBIyD2r'
-                        redirect_uri: 'https://git.{{ .Values.spec.domain }}/users/auth/openid_connect/callback'                         
+                        redirect_uri: 'https://gitlab.{{ .Values.spec.domain }}/users/auth/openid_connect/callback'                         
                    
       chart: secrets
     - repoURL: https://cloudnative-pg.io/charts
@@ -589,10 +589,10 @@ spec:
               enabled: false
               
             hosts:
-              domain: git.{{ .Values.spec.domain }}
+              domain: gitlab.{{ .Values.spec.domain }}
               externalIP: ""
               gitlab:
-                name: git.{{ .Values.spec.domain }}
+                name: gitlab.{{ .Values.spec.domain }}
                 https: true
               hostSuffix: null
               https: false
@@ -600,7 +600,7 @@ spec:
               enabled: true
               install: false
               configureCertmanager: false
-              class: public
+              class: private
               annotations:             
                  nginx.ingress.kubernetes.io/proxy-body-size: "0"
               tls:
@@ -658,18 +658,18 @@ spec:
           hostAliases:
           - ip: "172.16.14.245"
             hostnames:
-            - "git.{{ .Values.spec.domain }}"
+            - "gitlab.{{ .Values.spec.domain }}"
           image:
             registry: {{ .Values.spec.registry }}
             image: gitlab-org/gitlab-runner
           replicas: 5
-          gitlabUrl: https://git.{{ .Values.spec.domain }}
+          gitlabUrl: https://gitlab.{{ .Values.spec.domain }}
           concurrent: 10
           runners:
             config: |
               [[runners]]
-                 url = "https://git.{{ .Values.spec.domain }}"
-                 clone_url = "https://git.{{ .Values.spec.domain }}" 
+                 url = "https://gitlab.{{ .Values.spec.domain }}"
+                 clone_url = "https://gitlab.{{ .Values.spec.domain }}" 
                 [runners.kubernetes]
                   namespace = "gitlab"
                   image = "{{ .Values.spec.registry }}/alpine"

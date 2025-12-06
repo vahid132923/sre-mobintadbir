@@ -1,7 +1,7 @@
 spec:
   registry: docker.hamintech.ir
   env: tools
-  domain: raahbar.cloud
+  domain: cloud.raahbar.cloud
   destination:
     server: https://kubernetes.default.svc
     project: default
