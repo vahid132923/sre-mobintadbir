@@ -44,13 +44,13 @@ spec:
                   - name: elasticsearch
                     env:
                     - name: ES_JAVA_OPTS
-                      value: -Xms2g -Xmx2g        
+                      value: -Xms3g -Xmx3g        
                     resources:
                       limits:
-                        memory: 4Gi
+                        memory: 6Gi
                         cpu: 3
                       requests:  
-                        memory: 4Gi
+                        memory: 6Gi
                         cpu: 3              
                   affinity:
                     podAntiAffinity:
@@ -82,7 +82,7 @@ spec:
               labels: {}
               pathType: Prefix
               hosts:
-                - host: elastic.{{ .Values.spec.domain }}
+                - host: elastic-log.{{ .Values.spec.domain }}
                   path: /
               tls:
                 enabled: false
@@ -117,7 +117,7 @@ spec:
               labels: {}
               pathType: Prefix
               hosts:
-                - host: kibana.{{ .Values.spec.domain }}
+                - host: kibana-log.{{ .Values.spec.domain }}
                   path: /
               tls:
                 enabled: false              
